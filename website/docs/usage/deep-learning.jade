@@ -136,7 +136,7 @@ p
         return vectors
 
     def get_features(docs, max_length):
-        Xs = numpy.zeros(len(list(docs)), max_length, dtype='int32')
+        Xs = numpy.zeros((len(list(docs)), max_length), dtype='int32')
         for i, doc in enumerate(docs):
             for j, token in enumerate(doc[:max_length]):
                 Xs[i, j] = token.rank if token.has_vector else 0
